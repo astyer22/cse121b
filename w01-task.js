@@ -22,3 +22,4 @@ function total(...theNumbers) {
 	}
 	return sum
 }
+// This comment will allow me to re push the code to git hub becuase it did not work the first time.
