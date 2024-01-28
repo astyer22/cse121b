@@ -36,7 +36,7 @@ imageElement.setAttribute('src', profilePicture);
 imageElement.setAttribute('alt', `Profile image of ${fullName}`);
 
 // Adding array to the HTML display
-foodElement.textContent += `\n${favFood.join(', ')}`;
+foodElement.textContent += `<br>${favFood}`;
 
 // modifyed to html display
 console.log("My new favorite food list is :\n", favFood.join(','));
