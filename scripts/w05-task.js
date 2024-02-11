@@ -11,7 +11,7 @@ const displayTemple = (temples) => {
         h3.textContent = temple.templeName;
 
         const img = document.createElement('img');
-        img.src = temple.imageUrl; // Corrected typo here
+        img.src = temple.imageUrl;
         img.alt = temple.location;
 
         article.appendChild(h3);
@@ -23,15 +23,25 @@ const displayTemple = (temples) => {
 
 /* async getTemples Function using fetch()*/
 const getTemples = async () => {
-    const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
-    const data = await response.json();
-    templeList = data;
-    displayTemple(templeList);
+    try {
+        const response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
+        const data = await response.json();
+
+        // Adjusting date format
+        templeList = data.map(temple => ({
+            ...temple,
+            dedicatedDate: new Date(temple.dedicated.replace(/,/g, '')).getTime() // Removing commas and converting to milliseconds
+        }));
+
+        displayTemple(templeList);
+    } catch (error) {
+        console.error('Error fetching temple data:', error);
+    }
 };
 
 /* reset Function */
 const reset = () => {
-    templesElement.innerHTML = ''; // Corrected typo here and removed unnecessary variable redeclaration
+    templesElement.innerHTML = '';
 };
 
 /* filterTemples Function */
@@ -49,7 +59,7 @@ const filterTemples = () => {
             filteredTemples = templeList.filter(temp => !temp.location.includes('Utah'));
             break;
         case 'older':
-            filteredTemples = templeList.filter(temp => new Date(temp.dedicatedDate) < new Date(1950, 0, 1));
+            filteredTemples = templeList.filter(temp => temp.dedicatedDate < new Date(1950, 0, 1).getTime());
             break;
         case 'all':
             filteredTemples = templeList;
