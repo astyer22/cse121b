@@ -45,7 +45,7 @@ const filterTemples = () => {
         case 'utah':
             filteredTemples = templeList.filter(temp => temp.location.includes('Utah'));
             break;
-        case 'nonutah':
+        case 'notutah':
             filteredTemples = templeList.filter(temp => !temp.location.includes('Utah'));
             break;
         case 'older':

@@ -77,13 +77,13 @@ function divideNumbers() {
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
 
 /* Decision Structure */
-document.getElementById('getTotalButton').addEventListener('click', function () {
+document.getElementById('getTotal').addEventListener('click', function () {
     // Get the numeric value entered by the user in the subtotal field
     const subtotalInput = document.getElementById('subtotal');
     const subtotalValue = parseFloat(subtotalInput.value) || 0;
 
     // Check if the membership checkbox has been checked
-    const membershipCheckbox = document.getElementById('membershipCheckbox');
+    const membershipCheckbox = document.getElementById('member');
     const applyDiscount = membershipCheckbox.checked;
 
     // Apply a 20% discount if the membership checkbox is checked
