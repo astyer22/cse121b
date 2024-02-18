@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align:center;
+}
+
+#search-container {
+    text-align: center;
+    margin: bottom 20px;
+}
+
+#search-input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recipe-car {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
