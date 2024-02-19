@@ -1,5 +1,3 @@
-/* LESSON 3 - Programming Tasks */
-
 /* FUNCTIONS */
 
 // Function Definition - Add Numbers
@@ -26,8 +24,8 @@ const subtract = function (number1, number2) {
 
 const subNumbers = function () {
     // Get the variables from the HTML
-    let subNumber1 = parseFloat(document.querySelector('#sub1').value);
-    let subNumber2 = parseFloat(document.querySelector('#sub2').value);
+    let subNumber1 = parseFloat(document.querySelector('#subtract1').value);
+    let subNumber2 = parseFloat(document.querySelector('#subtract2').value);
 
     // Call the subtract function with the two numbers.
     document.querySelector('#difference').value = subtract(subNumber1, subNumber2);
@@ -91,22 +89,22 @@ document.getElementById('getTotal').addEventListener('click', function () {
     const totalAmount = subtotalValue * discountMultiplier;
 
     // Output the total to the total span in the specified format
-    const totalSpan = document.getElementById('totalSpan');
-    totalSpan.textContent = totalAmount.toFixed(2);
+    const totalSpan = document.getElementById('total');
+    totalSpan.textContent = "$" + totalAmount.toFixed(2);
 });
 
 /* ARRAY METHODS - Functional Programming */
 let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 let arrayElement = document.querySelector('#array');
-arrayElement.value = numbersArray;
+arrayElement.textContent = numbersArray.join(', ');
 
 /* Output Odds Only Array */
 const oddNumbers = numbersArray.filter(number => number % 2 === 1);
-document.getElementById('odds').innerHTML = oddNumbers;
+document.getElementById('odds').textContent = oddNumbers.join(', ');
 
 /* Output Evens Only Array */
 const evenNumbers = numbersArray.filter(number => number % 2 === 0);
-document.getElementById('evens').innerHTML = evenNumbers;
+document.getElementById('evens').textContent = evenNumbers.join(', ');
 
 /* Output Sum of Org. Array */
 const sumOfArray = numbersArray.reduce((sum, number) => sum + number, 0);
@@ -114,7 +112,7 @@ document.getElementById('sumOfArray').textContent = sumOfArray.toFixed(2);
 
 /* Output Multiplied by 2 Array */
 const multipliedBy2 = numbersArray.map(number => number * 2);
-document.getElementById('multiplied').innerHTML = multipliedBy2;
+document.getElementById('multiplied').textContent = multipliedBy2.join(', ');
 
 /* Output Sum of Multiplied by 2 Array */
 const sumMultipliedBy2 = multipliedBy2.reduce((sum, number) => sum + number, 0);
