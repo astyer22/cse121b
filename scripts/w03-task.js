@@ -89,7 +89,7 @@ document.getElementById('getTotal').addEventListener('click', function () {
     const totalAmount = subtotalValue * discountMultiplier;
 
     // Output the total to the total span in the specified format
-    const totalSpan = document.getElementById('total');
+    const totalSpan = document.getElementById('total'); 
     totalSpan.textContent = "$" + totalAmount.toFixed(2);
 });
 
